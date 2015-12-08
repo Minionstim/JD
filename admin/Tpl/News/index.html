@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>后台管理首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="__ROOT__/public/css/admin.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- 包含头 -->
+<include file="Public:header"/>
+    <!-- 当前位置 -->
+    <div class="locationDiv">:后台管理:修改栏目</div>
+    <!-- 正文内容 -->
+    <div class="contentDiv">
+      <div class="leftDiv"><include file="Public:left"/></div>
+      <div class="rightDiv">
+<table border="1" bgcolor="gray" align="center" width="300">
+    <tr>
+      <td colspan="3"  ><a href="__APP__/News/add/cid/{$Think.get.cid}">添加文章</a></td>
+    </tr>
+	<tr>
+		<td align="center">id</td>
+		<td align="center">标题</td>
+		<td align="center">管理</td>
+	</tr>
+	<foreach name="arr" item="v">
+	<tr>
+		<td align="center">{$v.id}</td>
+		<td align="center">{$v.title}</td>
+		<td align="center"><a href="__APP__/News/update/id/{$v.id}">修改</a>&nbsp;|&nbsp;<a href="__APP__/News/del/id/{$v.id}">删除</a></td>
+	</tr>
+	</foreach>
+</table>
+      </div>
+    </div>
+  </body>
+</html>

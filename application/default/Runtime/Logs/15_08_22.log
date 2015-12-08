@@ -1,0 +1,466 @@
+[ 2015-08-22T08:57:20+08:00 ] 127.0.0.1 /jd/
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000961s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.049102s ]
+SQL: SHOW COLUMNS FROM `goodstype` [ RunTime:0.147905s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=0 )  [ RunTime:0.000800s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=1 )  [ RunTime:0.000185s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=2 )  [ RunTime:0.000168s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=6 )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=10 )  [ RunTime:0.000161s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=11 )  [ RunTime:0.000157s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=14 )  [ RunTime:0.000154s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=17 )  [ RunTime:0.000150s ]
+NOTIC: [2] Invalid argument supplied for foreach() F:\www\jd\application\default\Lib\Action\IndexAction.class.php 第 13 行.
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=18 )  [ RunTime:0.000155s ]
+NOTIC: [2] Invalid argument supplied for foreach() F:\www\jd\application\default\Lib\Action\IndexAction.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `brandinfo` [ RunTime:0.002471s ]
+NOTIC: [8] Undefined offset: 0 F:\www\jd\application\default\Lib\Action\IndexAction.class.php 第 23 行.
+SQL: SELECT * FROM `brandinfo` WHERE ( typeId= )  [ RunTime:0.000444s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `brandinfo` WHERE ( typeId= ) 
+SQL: SHOW COLUMNS FROM `goodsinfo` [ RunTime:0.002550s ]
+SQL: SELECT * FROM `goodsinfo`  [ RunTime:0.000286s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: userMsg F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 247 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 261 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 264 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 267 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 270 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 273 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 276 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 279 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.215902s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.215946s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.024416s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000978s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000684s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000761s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.027003s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000835s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2015-08-22T08:57:26+08:00 ] 127.0.0.1 /jd/index.php/Goods/index/id/1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.094339s ]
+INFO: [ route_check ] --END-- [ RunTime:0.094402s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000487s ]
+SQL: SHOW COLUMNS FROM `goodsinfo` [ RunTime:0.002420s ]
+SQL: SELECT * FROM `goodsinfo` WHERE ( goodsId=1 ) LIMIT 1   [ RunTime:0.000306s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: userMsg F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 244 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 258 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 258 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 261 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 261 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 264 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 264 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 267 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 267 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 270 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 270 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 273 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 273 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 276 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 276 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.170692s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.170729s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000630s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000314s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000218s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001620s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000555s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000605s ]
+
+[ 2015-08-22T08:57:28+08:00 ] 127.0.0.1 /jd/index.php/Action/index/goodsCount/1/goodsId/1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000455s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+NOTIC: [8] Undefined index: userMsg F:\www\jd\application\default\Lib\Action\ActionAction.class.php 第 59 行.
+SQL: SHOW COLUMNS FROM `carinfo` [ RunTime:0.064339s ]
+SQL: SELECT * FROM `carinfo` WHERE ( goodsId=1 and userId= ) LIMIT 1   [ RunTime:0.000162s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT * FROM `carinfo` WHERE ( goodsId=1 and userId= ) LIMIT 1  
+SQL: INSERT INTO `carinfo` (`userId`,`goodsId`,`goodsCount`) VALUES (null,1,1) [ RunTime:0.023274s ]
+ERR: 1048:Column 'userId' cannot be null
+ [ SQL语句 ] : INSERT INTO `carinfo` (`userId`,`goodsId`,`goodsCount`) VALUES (null,1,1)
+
+[ 2015-08-22T08:57:28+08:00 ] 127.0.0.1 /jd/index.php/Cart/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000474s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000362s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000394s ]
+NOTIC: [8] Undefined index: userMsg F:\www\jd\application\default\Lib\Action\CartAction.class.php 第 6 行.
+SQL: select * from carInfo a inner join goodsInfo b on a.goodsId=b.goodsId and userId= [ RunTime:0.000152s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : select * from carInfo a inner join goodsInfo b on a.goodsId=b.goodsId and userId=
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: userMsg F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 195 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+NOTIC: [2] Invalid argument supplied for foreach() F:\www\jd\application\default\Common\common.php 第 16 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.093477s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093514s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000357s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000257s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000178s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000325s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001203s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000728s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000782s ]
+
+[ 2015-08-22T08:57:31+08:00 ] 127.0.0.1 /jd/index.php/Login/index
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000484s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: userMsg F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 108 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 122 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 122 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 125 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 125 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 128 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 128 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 131 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 131 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 134 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 134 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 137 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 137 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 140 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\f2b90c6db23de04500c5a2e42ebff9b8.php 第 140 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.042295s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042334s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000418s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000369s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000166s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001380s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000637s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000693s ]
+
+[ 2015-08-22T08:57:43+08:00 ] 127.0.0.1 /jd/index.php/Login/login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000719s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000494s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000528s ]
+SQL: SHOW COLUMNS FROM `userinfo` [ RunTime:0.050245s ]
+SQL: SELECT * FROM `userinfo` WHERE ( userName='admin' and passWord='123' ) LIMIT 1   [ RunTime:0.011473s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.023349s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023402s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000399s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000422s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000313s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000437s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001656s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000514s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2015-08-22T08:57:44+08:00 ] 127.0.0.1 /jd/index.php/Index/index
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000619s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000664s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `goodstype` [ RunTime:0.002570s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=0 )  [ RunTime:0.000278s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=1 )  [ RunTime:0.000180s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=2 )  [ RunTime:0.000191s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=6 )  [ RunTime:0.000181s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=10 )  [ RunTime:0.000176s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=11 )  [ RunTime:0.000178s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=14 )  [ RunTime:0.000219s ]
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=17 )  [ RunTime:0.000170s ]
+NOTIC: [2] Invalid argument supplied for foreach() F:\www\jd\application\default\Lib\Action\IndexAction.class.php 第 13 行.
+SQL: SELECT * FROM `goodstype` WHERE ( parentId=18 )  [ RunTime:0.000171s ]
+NOTIC: [2] Invalid argument supplied for foreach() F:\www\jd\application\default\Lib\Action\IndexAction.class.php 第 13 行.
+SQL: SHOW COLUMNS FROM `brandinfo` [ RunTime:0.002327s ]
+NOTIC: [8] Undefined offset: 0 F:\www\jd\application\default\Lib\Action\IndexAction.class.php 第 23 行.
+SQL: SELECT * FROM `brandinfo` WHERE ( typeId= )  [ RunTime:0.000132s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+ [ SQL语句 ] : SELECT * FROM `brandinfo` WHERE ( typeId= ) 
+SQL: SHOW COLUMNS FROM `goodsinfo` [ RunTime:0.002613s ]
+SQL: SELECT * FROM `goodsinfo`  [ RunTime:0.000341s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 261 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 264 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 267 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 270 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 273 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 276 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\33af4b837747d1d7905dbdd00c63e095.php 第 279 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.021241s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021291s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000783s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000447s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000315s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000494s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002127s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000665s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000708s ]
+
+[ 2015-08-22T08:57:44+08:00 ] 127.0.0.1 /jd/index.php/Index/category.php?id=355
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000623s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+ERR: 非法操作:category.php
+
+[ 2015-08-22T08:57:47+08:00 ] 127.0.0.1 /jd/index.php/Goods/index/id/1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000723s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000811s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000590s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000656s ]
+SQL: SHOW COLUMNS FROM `goodsinfo` [ RunTime:0.002355s ]
+SQL: SELECT * FROM `goodsinfo` WHERE ( goodsId=1 ) LIMIT 1   [ RunTime:0.000253s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 258 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 258 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 261 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 261 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 264 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 264 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 267 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 267 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 270 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 270 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 273 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 273 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 276 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\2b9ceab0863e0aa2a5f9e0bef3e78664.php 第 276 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022936s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022979s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000650s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000315s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000181s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000369s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001617s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000701s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000765s ]
+
+[ 2015-08-22T08:57:48+08:00 ] 127.0.0.1 /jd/index.php/Action/index/goodsCount/1/goodsId/1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000482s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `carinfo` [ RunTime:0.002322s ]
+SQL: SELECT * FROM `carinfo` WHERE ( goodsId=1 and userId=1 ) LIMIT 1   [ RunTime:0.046339s ]
+SQL: UPDATE `carinfo` SET `goodsCount`=goodsCount+1 WHERE ( goodsId=1 and userId=1 ) [ RunTime:0.132562s ]
+
+[ 2015-08-22T08:57:48+08:00 ] 127.0.0.1 /jd/index.php/Cart/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000481s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+SQL: select * from carInfo a inner join goodsInfo b on a.goodsId=b.goodsId and userId=1 [ RunTime:0.000501s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009538s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009578s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000355s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000268s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000162s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000327s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001193s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000541s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000591s ]
+
+[ 2015-08-22T08:57:50+08:00 ] 127.0.0.1 /jd/index.php/Action/delete/carId/29
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000482s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000339s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+SQL: SHOW COLUMNS FROM `carinfo` [ RunTime:0.002263s ]
+SQL: DELETE FROM `carinfo` WHERE ( carId=29 ) [ RunTime:0.086795s ]
+
+[ 2015-08-22T08:57:50+08:00 ] 127.0.0.1 /jd/index.php/Cart/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000492s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+SQL: select * from carInfo a inner join goodsInfo b on a.goodsId=b.goodsId and userId=1 [ RunTime:0.000325s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009540s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000374s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000262s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000163s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001224s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000766s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000824s ]
+
+[ 2015-08-22T08:57:51+08:00 ] 127.0.0.1 /jd/index.php/Action/delete/carId/30
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000481s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000340s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000371s ]
+SQL: SHOW COLUMNS FROM `carinfo` [ RunTime:0.002313s ]
+SQL: DELETE FROM `carinfo` WHERE ( carId=30 ) [ RunTime:0.083422s ]
+
+[ 2015-08-22T08:57:51+08:00 ] 127.0.0.1 /jd/index.php/Cart/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000466s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+SQL: select * from carInfo a inner join goodsInfo b on a.goodsId=b.goodsId and userId=1 [ RunTime:0.000344s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009977s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010013s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000366s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000241s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000189s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000373s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001252s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000756s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000820s ]
+
+[ 2015-08-22T08:57:52+08:00 ] 127.0.0.1 /jd/index.php/Action/delete/carId/31
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000483s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000526s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+SQL: SHOW COLUMNS FROM `carinfo` [ RunTime:0.002784s ]
+SQL: DELETE FROM `carinfo` WHERE ( carId=31 ) [ RunTime:0.039472s ]
+
+[ 2015-08-22T08:57:52+08:00 ] 127.0.0.1 /jd/index.php/Cart/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000639s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000701s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000559s ]
+SQL: select * from carInfo a inner join goodsInfo b on a.goodsId=b.goodsId and userId=1 [ RunTime:0.000322s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 209 行.
+NOTIC: [8] Use of undefined constant category1 - assumed 'category1' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 212 行.
+NOTIC: [8] Use of undefined constant auction - assumed 'auction' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 215 行.
+NOTIC: [8] Use of undefined constant Diy - assumed 'Diy' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 218 行.
+NOTIC: [8] Use of undefined constant Message - assumed 'Message' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 221 行.
+NOTIC: [8] Use of undefined constant category2 - assumed 'category2' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 224 行.
+NOTIC: [8] Use of undefined constant category3 - assumed 'category3' F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+NOTIC: [8] Undefined variable: pageName F:\www\jd\application\default\Runtime\Cache\731ca5e0427d3d96fea3cdcfd561c48b.php 第 227 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009130s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009165s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000332s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000291s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000173s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000365s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001246s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000847s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000917s ]
+

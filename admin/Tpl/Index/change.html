@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>后台管理首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="__ROOT__/public/css/admin.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- 包含头 -->
+<include file="Public:header"/>
+    <!-- 当前位置 -->
+    <div class="locationDiv">:后台管理:修改栏目</div>
+    <!-- 正文内容 -->
+    <div class="contentDiv">
+      <div class="leftDiv"><include file="Public:left"/></div>
+      <div class="rightDiv">
+<form action="__APP__/Category/update" method="post">
+<table border="1" align="center" bgcolor="gray" width="500">
+	<tr>
+		<td align="center">id</td>
+		<td align="center">名称</td>
+		<td align="center">数据类型</td>
+		<td align="center">内容</td>
+		<td align="center">排序</td>
+		<td align="center">操作</td>
+	</tr>
+	<foreach name='cInfo' item='v'>
+	<if condition="$v['state'] eq 0">
+	<tr>
+		<td>{$v.id}</td>
+		<td>{$v.num|str_repeat='&nbsp;&nbsp;',###}{$v.cname}</td>
+		<td>{$v.mtype}</td>
+		<td>
+		<if condition="$v.mtype eq '文章'">
+		<a href="__APP__/News/index/cid/{$v.id}">内容</a>
+		<else/>
+		<a href="__APP__/Product/index/cid/{$v.id}">内容</a>
+		</if>
+		</td>
+		<td><input value="{$v.ordernum}"  type="text" name="ordernum"/></td>
+		<td>
+		<a href="__APP__/Index/update/id/{$v.id}">修改</a>&nbsp;|&nbsp;<a href="__APP__/News/del/id/{$v.id}">删除</a>
+		</td>
+	</tr>
+	</if>
+	</foreach>	
+   <tr>
+      <td colspan="6" align="center">
+          {$pageList}
+      </td>
+   </tr>
+</table>
+</form>
+
+      </div>
+    </div>
+  </body>
+</html>

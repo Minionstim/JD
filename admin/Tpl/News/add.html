@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>后台管理首页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="__ROOT__/public/css/admin.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- 包含头 -->
+<include file="Public:header"/>
+    <!-- 当前位置 -->
+    <div class="locationDiv">:后台管理:修改栏目</div>
+    <!-- 正文内容 -->
+    <div class="contentDiv">
+      <div class="leftDiv"><include file="Public:left"/></div>
+      <div class="rightDiv">
+      <div><a href="__APP__/News/index/cid/{$Think.get.cid}">文章管理</a></div>
+<form action="__APP__/News/save" method="post">
+<table>
+	<tr>
+		<td>标题</td>
+		<td><input type="hidden" name="cateid" value="{$Think.get.cid}"/><input type="text" name="title"/></td>
+	</tr>
+	<tr>
+		<td>内容</td>
+		<td><textarea cols="50" rows="6" name="content"></textarea></td>
+	</tr>
+	<tr>
+		<td>作者</td>
+		<td><input type="text" name="writer"/></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="提交"/></td>
+	</tr>
+</table>
+</form>
+     </div>
+    </div>
+  </body>
+</html>
