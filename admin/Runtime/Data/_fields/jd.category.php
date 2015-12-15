@@ -1,1 +1,0 @@
-<?php	return array ( 0 => 'id', 1 => 'cname', 2 => 'fid', 3 => 'mtype', 4 => 'content', 5 => 'isshow', '_autoinc' => true, '_pk' => 'id', '_type' => array ( 'id' => 'smallint(6)', 'cname' => 'char(10)', 'fid' => 'smallint(6)', 'mtype' => 'enum(\'文章\',\'产品\')', 'content' => 'text', 'isshow' => 'tinyint(1)', ), );?>
