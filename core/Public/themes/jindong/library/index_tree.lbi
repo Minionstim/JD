@@ -1,0 +1,110 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style>
+.hove{
+margin:0;
+padding:0;
+}
+.hove a{
+margin:0;
+padding:0;
+}
+
+
+#cat-div a:visited,#cat-div a:link,#cat-div a:hover{
+<b>font:16px,tahoma</b>;/*这里修改大小和字体*/
+}
+
+.hove a:hover{
+background:#f2f2f1;/*活动小类背景*/
+}
+
+#cat-div ul li a:hover{
+color:#333;/*活动小类颜色*/
+}
+#cat-div .parent-cat a:hover{
+color:#d04493;/*大类颜色*/
+}
+</style>
+
+<div id="categoryTree2" class="globalModule " style="position: static">
+ <h3><div id="list_t_l"><div id="list_t_r"><b>商品分类</b></div></div></h3>
+ 
+ <div id="global_box" style="padding:0;width:209px; overflow:hidden"> 
+
+
+   <script>var cat_id = new Array(); var a=0;</script>
+<!--{foreach from=$categories item=cat}-->
+   <div class="cate1"><a href="{if $cat.children}### {else}category.php?id={$cat.id} {/if}" style="color:#005aa0; font-size:14px;">{$cat.name|escape:html}</a></div>
+  <!--{foreach from=$cat.children item=child }-->
+  <script>cat_id[a] = {$child.id}; a=a+1; </script>
+    <dl>
+     <dt onMouseMove="return tab_in('{$child.id}');" class="cate2"><a href="{$child.cat_url}">{$child.name|escape:html}</a></dt>
+      <dd id="cat_{$child.id}" onMouseOut="return tab_out('cat_{$child.id}');" class="cate2_1" >
+       <div style="float:left; width:181px; height:27px; background:url(images/index_cat_bgl.gif) no-repeat ; position:relative; z-index:2; padding-left:10px;"><a href="{$child.cat_url}" style="">{$child.name|escape:html}</a></div>
+       <div style="float:left; width:204px; margin-left:-1px; z-index:1; position:relative;">
+       <div style=" background:url(images/index_cat_bgt.png) no-repeat; width:204px; height:23px;">&nbsp;</div>
+       <div style="background:url(images/index_cat_bgc.gif) repeat-y; width:199px; margin-top:-14px; padding-left:5px; " class="index_category">
+       <div style="clear:both"></div>
+       <div class="cate3th">
+       
+        {foreach from=$child.children item=child3}
+        &nbsp;<a href="category.php?id={$child3.id}">{$child3.name|escape:html}</a>&nbsp;
+        {/foreach}
+
+       </div>
+        <div style="clear:both"></div>
+       </div>
+       <div style=" background:url(images/index_cat_bgb.png) no-repeat; width:205px">&nbsp;</div>
+       </div>
+      </dd>
+    </dl>
+   <!-- {/foreach} -->
+<!-- {/foreach} -->
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+var all_num = a;
+function tab_in(num)
+{
+	var b = 'cat_'+num;
+	for(i=0;i<all_num;i++)
+	{
+		var d = 'cat_'+ cat_id[i];
+		document.getElementById(d).style.display = 'none';
+	}
+	document.getElementById(b).style.display = 'block';
+	return false;
+}
+
+function tab_out(pName)
+{
+	var c = pName;
+	var obj = event.toElement;
+    while( obj!=null && obj.id!=pName )
+	{
+        obj = obj.parentElement;
+    }
+	if( obj==null ){ document.getElementById(c).style.display = 'none'}; 
+	
+	return false;
+}
+
+function close_all()
+{
+	for(i=0;i<all_num;i++)
+	{
+		var d = 'cat_'+ cat_id[i];
+		tab_out(d);
+	}; 
+	return false;
+}
+</script>

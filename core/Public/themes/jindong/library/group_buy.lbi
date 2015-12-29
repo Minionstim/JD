@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $group_buy_goods} -->
+<div id="globalGroup" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>团购商品</b></div></div></h3>
+<div id="global_box"> 
+  <div class="itemGrid">
+    <!-- {foreach from=$group_buy_goods item=goods} -->
+    <div class="item">
+      <p class="pic"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.goods_name|escape:html}" /></a></p>
+      <p class="name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.short_style_name|escape:html}</a></p>
+      <p class="price">
+        <span class="goodsPrice">{$goods.last_price}</span>
+      </p>
+    </div>
+    <!-- {/foreach} -->
+  </div>
+   <p class="more"><a href="../group_buy.php"><img src="../images/arr_more.gif" alt="" /> 更多>></a></p>
+</div>
+</div>
+
+<div class="blank"></div>
+<!-- {/if} -->
+

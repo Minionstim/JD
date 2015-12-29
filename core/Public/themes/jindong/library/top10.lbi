@@ -1,0 +1,31 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $top_goods} -->
+<div id="topList" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>销售排行</b></div></div></h3>
+<div id="global_box"> 
+  <ul>
+    <!-- {foreach name=top_goods from=$top_goods item=goods}-->
+     <li style=" overflow:hidden;">
+     
+    <span class="count" >{$smarty.foreach.top_goods.iteration}</span>
+    <!-- {if $smarty.foreach.top_goods.iteration<2}-->
+    <div class="top_one">
+       <a style="color:#FFF" href="{$goods.url}" title="{$goods.name|escape:html}"><img style=" width:50px; height:38px;" src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="samllimg" /> </a>
+       
+       <a style="float:left" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name} <br/>
+        {$lang.shop_price}<font class="f1">{$goods.price}</font></a>
+    </div>    <div style="clear:both"></div>
+	<!-- {/if} -->	
+   
+     <!-- {if $smarty.foreach.top_goods.iteration>1}-->
+    <a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name}</a>
+    <!-- {/if} -->	
+    </li>
+    
+    
+    
+    <!--{/foreach}-->
+  </ul>
+</div>  
+</div>
+<!-- {/if} -->

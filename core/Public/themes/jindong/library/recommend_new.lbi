@@ -1,0 +1,217 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $new_goods} -->
+
+
+
+<div id="globalBest" class="globalModule">
+<h3>
+
+<div id="recom_title_r">
+<div id="recom_title_l">
+<span>新品上市</span>
+
+
+
+<a target="_blank" href="../search.php?intro=new">更多新品>></a>	 
+</div>       
+</div>   
+
+   
+</h3>
+  <div id="show_new_area" class="itemGrid">
+  
+  
+  <DIV class=container>
+<SCRIPT>
+function Marquee()
+{
+	this.ID = document.getElementById(arguments[0]);
+	this.Direction = arguments[1];
+	this.Step = arguments[2];
+	this.Width = arguments[3];
+	this.Height = arguments[4];
+	this.Timer = arguments[5];
+	this.WaitTime = arguments[6];
+	this.StopTime = arguments[7];
+	if(arguments[8])
+		this.ScrollStep = arguments[8]
+	else
+		this.ScrollStep = this.Direction>1 ? this.Width : this.Height;
+	this.CTL = this.StartID = this.Stop = this.MouseOver = 0;
+	this.ID.style.overflowX = this.ID.style.overflowY = "hidden";
+	this.ID.noWrap = true;
+	this.ID.style.width = this.Width;
+	this.ID.style.height = this.Height;
+	this.ClientScroll = this.Direction>1 ? this.ID.scrollWidth : this.ID.scrollHeight;
+	this.ID.innerHTML += this.ID.innerHTML;
+	this.Start(this,this.Timer,this.WaitTime,this.StopTime);
+}
+
+
+Marquee.prototype.Start = function(msobj,timer,waittime,stoptime)
+{
+	msobj.StartID = function(){msobj.Scroll()}
+	msobj.Continue = function()
+				{
+					if(msobj.MouseOver == 1)
+					{
+						setTimeout(msobj.Continue,waittime);
+					}
+					else
+					{	clearInterval(msobj.TimerID);
+						msobj.CTL = msobj.Stop = 0;
+						msobj.TimerID = setInterval(msobj.StartID,timer);
+					}
+				}
+	msobj.Pause = function()
+			{
+				msobj.Stop = 1;
+				clearInterval(msobj.TimerID);
+				setTimeout(msobj.Continue,waittime);
+			}
+	msobj.Begin = function()
+	{
+		msobj.TimerID = setInterval(msobj.StartID,timer);
+		msobj.ID.onmouseover = function()
+					{
+						msobj.MouseOver = 1;
+						clearInterval(msobj.TimerID);
+					}
+		msobj.ID.onmouseout = function()
+					{
+						msobj.MouseOver = 0;
+						if(msobj.Stop == 0)
+						{
+							clearInterval(msobj.TimerID);
+							msobj.TimerID = setInterval(msobj.StartID,timer);
+						}
+					}
+	}
+	setTimeout(msobj.Begin,stoptime);
+}
+
+Marquee.prototype.Scroll = function()
+{
+	switch(this.Direction)
+	{
+		case 0:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollTop += this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{   
+				if(this.ID.scrollTop >= this.ClientScroll)
+				{
+					this.ID.scrollTop -= this.ClientScroll;
+				}
+				this.ID.scrollTop += this.Step;
+			}
+		break;
+
+		case 1:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollTop -= this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{
+				if(this.ID.scrollTop <= 0)
+				{
+					this.ID.scrollTop += this.ClientScroll;
+				}
+				this.ID.scrollTop -= this.Step;
+			}
+		break;
+
+		case 2:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollLeft += this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{
+				if(this.ID.scrollLeft >= this.ClientScroll)
+				{
+					this.ID.scrollLeft -= this.ClientScroll;
+				}
+				this.ID.scrollLeft += this.Step;
+			}
+		break;
+
+		case 3:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollLeft -= this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{
+				if(this.ID.scrollLeft <= 0)
+				{
+					this.ID.scrollLeft += this.ClientScroll;
+				}
+				this.ID.scrollLeft -= this.Step;
+			}
+		break;
+	}
+}
+-->
+</SCRIPT>
+
+<DIV id=textdiv style="height:164px; overflow:hidden">
+<DIV id=lr>
+
+<div>
+	<DIV class="cxtj2" >
+    <!--滚动开始-->
+
+         <!--{foreach from=$new_goods item=goods}-->
+    <div class="item" style=" border-bottom:none; height:163px; padding:0; padding-top:1px;">
+   
+      <p class="pic"><a target="_blank" href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></p>
+      <p class="name" ><a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}<span>{$goods.brief}</span></a></p>
+     
+      <p class="price">
+        <!-- {if $goods.promote_price neq ""} -->
+        {$lang.promote_price}<span class="goodsPrice">{$goods.promote_price}</span>
+        <!-- {else}-->
+        {$lang.shop_price}<span class="goodsPrice">{$goods.shop_price}</span>
+        <!--{/if}-->
+      </p>
+
+     </div>
+    <!-- {/foreach} -->
+      	<!--滚动结束-->
+      </DIV>
+</div>
+
+
+</DIV></DIV>
+<SCRIPT defer>
+  if   (screen.width   <   1025)   
+      new Marquee("textdiv",0,4,546,164,7,3000,7)
+  else   
+      new Marquee("textdiv",0,4,766,164,7,3000,7)
+</SCRIPT>
+
+
+</DIV>
+
+
+
+  </div>
+</div>
+
+<!-- {/if} -->

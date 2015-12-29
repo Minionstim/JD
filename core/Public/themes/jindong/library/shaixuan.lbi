@@ -1,0 +1,131 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <!--{if $brands.1 || $price_grade.1 || $filter_attr_list}-->
+
+
+
+<div class="box">
+ <div class="box_1">
+ 
+<style type="text/css">
+<!--
+.Select {
+background:url(../images/tag_title2.gif) repeat-x 0 top;
+margin-bottom:10px; float:left; width:100%
+}
+.Select dl {
+border-top:1px dashed #e7cdae;
+overflow:hidden; padding:5px 0; float:left; width:100%;
+}
+
+.Select dt {
+float:left;
+font-weight:bold;
+text-align:right;
+width:100px; 
+}
+.Select dt, .Select dd { 
+}
+
+.Select dd {
+float:left;
+overflow:hidden;
+}
+.Select dt, .Select dd {
+}
+
+.Select dd div {
+float:left;
+margin-right:15px;
+}
+
+.Select dd a:hover,.Select dd a:hover span, {
+background:#4598D2 none repeat scroll 0 0;
+color:#FFFFFF;
+}
+
+.Select dd a { color:#005aa0;
+display:block;
+text-decoration:none;
+white-space:nowrap;
+}
+a:link, a:visited {
+color:#222222;
+}
+a {
+text-decoration:none;
+}
+
+.select_all{ background:#4598d2; padding:0 2px;color:#FFF}
+.Select dd .select_all { }
+
+-->
+</style>
+
+
+  <div class="Select">
+
+
+
+ <div style="color:#cc3300; font-size:14px; font-weight:bold; padding:9px;" >商品筛选</div>
+  	<!--{if $brands.1}-->
+        <dl>
+            <dt>{$lang.brand}：</dt>
+            <dd>
+                <!--{foreach from=$brands item=brand}-->
+                <!-- {if $brand.selected} -->
+                <div class="select_all">{$brand.brand_name}</div>
+                <!-- {else} -->
+                <div> <a href="{$brand.url}">{$brand.brand_name}</a> </div>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+            </dd>
+        </dl>
+        <div style=" clear:both"></div>
+    <!-- {/if} -->
+    
+    	<!--{if $price_grade.1}-->     
+ 	   <dl>
+            <dt>{$lang.price}：</dt>
+            <dd>
+                <!--{foreach from=$price_grade item=grade}-->
+                <!-- {if $grade.selected} -->
+                <div class="select_all">{$grade.price_range}</div>
+                <!-- {else} -->
+                <div>  <a href="{$grade.url}">{$grade.price_range}</a> </div>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+            </dd>
+        </dl>
+          <div style=" clear:both"></div>
+         <!-- {/if} -->  
+          
+          
+         <!--{foreach from=$filter_attr_list item=filter_attr}-->  
+        <dl>
+            <dt>{$filter_attr.filter_attr_name|escape:html}：</dt>
+            <dd>
+                 <!--{foreach from=$filter_attr.attr_list item=attr}-->
+      <!-- {if $attr.selected} -->
+                <div class="select_all">{$attr.attr_value}</div>
+                <!-- {else} -->
+                <div>   <a href="{$attr.url}">{$attr.attr_value}</a>  </div>
+                <!-- {/if} -->
+                <!-- {/foreach} -->
+            </dd>
+        </dl>
+          <div style=" clear:both"></div>
+    <!--{/foreach}--> 
+ 
+
+
+	</div>
+
+</div></div>
+<div class="blank5"></div>
+
+
+	  <!-- {/if} -->
+
+
+
+

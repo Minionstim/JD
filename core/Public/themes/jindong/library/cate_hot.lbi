@@ -1,0 +1,45 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+
+<div class="cate_hot">
+<div class="nei">
+<div class="nei2">
+
+<div style="padding:40px 0 0 20px;">
+<!-- {foreach from=$hot_goods item=goods name=hot} -->
+<div class="item hot_item2">
+      <p  class="pic"><a href="{$goods.url}"><img style="width:100px; height:100px;margin:0 auto; float:left; text-align:center" src="{$goods.thumb}" alt="{$goods.name|escape:html}"/></a></p>
+      
+      <div class="hot_item2_2">
+      
+      <p  class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}<span>{$goods.brief}</span></a>
+      
+      
+      
+      </p> 
+      
+      <p align="center" class="price">
+     今日特价：<font class="shop_s"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}
+        <!--{/if}-->
+        </font>
+      </p>
+      <div style="padding-top:5px;">
+     <a href="javascript:addToCart({$goods.id})"> <img src="../images/bnt1.gif"> </a>
+      </div>
+      
+      </div>
+      
+      
+     </div>
+ <!-- {/foreach} -->
+</div>  
+
+</div>
+</div>
+</div>
+
+<div class="blank"></div>
+
+
+
+<!-- {/if} -->

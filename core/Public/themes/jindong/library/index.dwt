@@ -1,0 +1,643 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="Keywords" content="{$keywords}" />
+  <meta name="Description" content="{$description}" />
+  <!-- TemplateBeginEditable name="doctitle" --><!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+ 
+<link href="" rel="stylesheet" type="text/css" /> 
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+
+
+
+  <title>{$page_title}</title>
+  {* 包含脚本文件 *}{insert_scripts files='common.js,index.js'}  
+</head>
+
+<body>
+
+
+
+
+  <div id="container">
+    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+    <div id="globalLeft">
+      <!-- TemplateBeginEditable name="主区域左侧" -->
+<!-- #BeginLibraryItem "/library/category_tree.lbi" -->
+
+<style>
+.hove{
+margin:0;
+padding:0;
+}
+.hove a{
+margin:0;
+padding:0;
+}
+
+
+.hove a:hover{
+background:#f2f2f1;/*活动小类背景*/
+}
+
+#cat-div ul li a:hover{
+color:#333;/*活动小类颜色*/
+}
+#cat-div .parent-cat a:hover{
+color:#d04493;/*大类颜色*/
+}
+</style>
+
+<div id="categoryTree2" class="globalModule " style="position: static">
+ <h3><div id="list_t_l"><div id="list_t_r"><b>商品分类</b></div></div></h3>
+ 
+ <div id="global_box" style="padding:7px 0;width:209px; overflow:hidden"> 
+
+
+   <script>var cat_id = new Array(); var a=0;</script>
+<!--{foreach from=$categories item=cat}-->
+   <div class="cate1"><a href="category.php?id={$cat.id}" style="color:#d6290b; font-size:14px;">{$cat.name|escape:html}</a></div>
+  <!--{foreach from=$cat.children item=child }-->
+  <script>cat_id[a] = {$child.id}; a=a+1; </script>
+    <dl>
+     <dt onMouseMove="return tab_in('{$child.id}');" class="cate2">
+      <div class="cata_zi">
+     <a href="category.php?id={$child.id}">{$child.name|escape:html}</a> - {foreach from=$child.children item=child3}
+        &nbsp;{$child3.name|escape:html}&nbsp;
+        {/foreach}
+      </div>
+     </dt>
+      <dd id="cat_{$child.id}" onMouseOut="return tab_out('cat_{$child.id}');" class="cate2_1" >
+       <div style="float:left; width:181px; height:27px; background:url(images/index_cat_bgl.gif) no-repeat ; position:relative; z-index:2; padding-left:10px;"><a href="category.php?id={$child.id}" style="">{$child.name|escape:html}</a>
+       
+       </div>
+       <div style="float:left; width:204px; margin-left:-1px; z-index:1; position:relative;">
+       <div style=" background:url(images/index_cat_bgt.png) no-repeat; width:204px; height:23px;">&nbsp;</div>
+       <div style="background:url(images/index_cat_bgc.gif) repeat-y; width:199px; margin-top:-14px; padding-left:5px; " class="index_category">
+       <div style="clear:both"></div>
+       <div class="cate3th">
+       
+        {foreach from=$child.children item=child3}
+        &nbsp;<a href="category.php?id={$child3.id}">{$child3.name|escape:html}</a>&nbsp;
+        {/foreach}
+
+       </div>
+        <div style="clear:both"></div>
+       </div>
+       <div style=" background:url(images/index_cat_bgb.png) no-repeat; width:205px">&nbsp;</div>
+       </div>
+      </dd>
+    </dl>
+   <!-- {/foreach} -->
+<!-- {/foreach} -->
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+var all_num = a;
+function tab_in(num)
+{
+	var b = 'cat_'+num;
+	for(i=0;i<all_num;i++)
+	{
+		var d = 'cat_'+ cat_id[i];
+		document.getElementById(d).style.display = 'none';
+	}
+	document.getElementById(b).style.display = 'block';
+	return false;
+}
+
+function tab_out(pName)
+{
+	var c = pName;
+	var obj = event.toElement;
+    while( obj!=null && obj.id!=pName )
+	{
+        obj = obj.parentElement;
+    }
+	if( obj==null ){ document.getElementById(c).style.display = 'none'}; 
+	
+	return false;
+}
+
+function close_all()
+{
+	for(i=0;i<all_num;i++)
+	{
+		var d = 'cat_'+ cat_id[i];
+		tab_out(d);
+	}; 
+	return false;
+}
+</script>
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/brands.lbi" -->
+
+<!-- {if $brand_list} -->
+<div id="brandList" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>品牌专卖店</b></div></div></h3>
+<div id="global_box"> 
+<div style="clear:both"></div>
+    <!-- {foreach from=$brand_list item=brand name="brand_foreach"} -->
+		{if $smarty.foreach.brand_foreach.index <= 3}
+    <!-- {if $brand.brand_logo} -->
+    <a href="{$brand.url}"><img class="brand_img" src="../data/brandlogo/{$brand.brand_logo}" alt="{$brand.brand_name|escape:html} ({$brand.goods_num})" /></a>
+    <!-- {else} -->
+    <p class="textLink"><a href="{$brand.url}">{$brand.brand_name|escape:html}</a> <!-- {if $brand.goods_num} --><span class="textDesc">({$brand.goods_num})</span><!--    {/if} -->
+		</p>
+    <!-- {/if} -->
+		{/if}
+    <!-- {/foreach} -->
+    
+    
+    <div style="clear:both"></div> 
+    <p class="more"><a href="../brand.php"><img src="../images/arr_more.gif" alt="" /> 更多>></a></p>
+  </div>
+	
+   
+</div>
+<!-- {/if} -->
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/promotion_info.lbi" -->
+
+<!-- {if $promotion_info} -->
+<!-- 促销信息 -->
+<div class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>促销信息</b></div></div></h3>
+<div id="global_box"> 
+	<div class="promotion_info">
+  <!-- {foreach from=$promotion_info item=item key=key} -->
+    <!-- {if $item.type eq "snatch"} -->
+    ·<a href="snatch.php" title="{$lang.$item.type}">{$lang.snatch_promotion}</a>
+    <!-- {elseif $item.type eq "group_buy"} -->
+    ·<a href="group_buy.php" title="{$lang.$item.type}">{$lang.group_promotion}</a>
+    <!-- {elseif $item.type eq "auction"} -->
+   ·<a href="auction.php" title="{$lang.$item.type}">{$lang.auction_promotion}</a>
+    <!-- {elseif $item.type eq "favourable"} -->
+   ·<a href="activity.php" title="{$lang.$item.type}">{$lang.favourable_promotion}</a>
+    <!-- {/if} -->
+    <a href="{$item.url}" title="{$lang.$item.type} {$item.act_name}{$item.time}">{$item.act_name}</a><br />
+    <!-- {/foreach} -->
+		</div>
+</div>     
+</div>
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/vote_list.lbi" -->
+
+{insert name='vote'}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->    </div><!-- /globalLeft -->
+    <div id="globalMiddle">
+      <div id="promotionVideo" class="globalModule">
+        <!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
+      </div><!-- /promotionVideo -->
+      
+      
+      <!-- TemplateBeginEditable name="主区域中间" -->
+<!-- #BeginLibraryItem "/library/recommend_hot.lbi" -->
+
+<!-- {if $hot_goods} -->
+<div id="globalBest" class="globalModule">
+<h3>
+<div id="recom_title_r">
+<div id="recom_title_hot">
+<a style="color:#005aa0; font-weight:normal; float:right; padding-right:5px; line-height:27px;" href="../search.php?intro=hot">更多热卖>></a>	 
+</div>       
+</div>      
+</h3>
+  <div id="show_hot_area" class="itemGrid">
+    <!-- {foreach from=$hot_goods item=goods} -->
+    <div class="item">
+   
+    <img style=" float:right" src="../images/item_line.gif">
+    
+    
+      <p align="center" class="pic"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" style="margin:0 auto; text-align:center" /></a></p>
+      <p align="center" class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+      <p align="center" class="price">
+        <!-- {if $goods.promote_price neq ""} -->
+        {$lang.promote_price}<span class="goodsPrice">{$goods.promote_price}</span>
+        <!-- {else}-->
+        {$lang.shop_price}<span class="goodsPrice">{$goods.shop_price}</span>
+        <!--{/if}-->
+      </p>
+
+     </div>
+    <!-- {/foreach} -->
+  </div>
+</div>
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/recommend_new.lbi" -->
+
+<!-- {if $new_goods} -->
+
+
+
+<div id="globalBest" class="globalModule">
+<h3>
+<div id="recom_title_r">
+<div id="recom_title_new">
+<a style="color:#005aa0; font-weight:normal; float:right; padding-right:5px;" href="../search.php?intro=new">更多新品>></a>	 
+</div>       
+</div>      
+</h3>
+  <div id="show_new_area" class="itemGrid">
+  
+  
+  <DIV class=container>
+<SCRIPT>
+function Marquee()
+{
+	this.ID = document.getElementById(arguments[0]);
+	this.Direction = arguments[1];
+	this.Step = arguments[2];
+	this.Width = arguments[3];
+	this.Height = arguments[4];
+	this.Timer = arguments[5];
+	this.WaitTime = arguments[6];
+	this.StopTime = arguments[7];
+	if(arguments[8])
+		this.ScrollStep = arguments[8]
+	else
+		this.ScrollStep = this.Direction>1 ? this.Width : this.Height;
+	this.CTL = this.StartID = this.Stop = this.MouseOver = 0;
+	this.ID.style.overflowX = this.ID.style.overflowY = "hidden";
+	this.ID.noWrap = true;
+	this.ID.style.width = this.Width;
+	this.ID.style.height = this.Height;
+	this.ClientScroll = this.Direction>1 ? this.ID.scrollWidth : this.ID.scrollHeight;
+	this.ID.innerHTML += this.ID.innerHTML;
+	this.Start(this,this.Timer,this.WaitTime,this.StopTime);
+}
+
+
+Marquee.prototype.Start = function(msobj,timer,waittime,stoptime)
+{
+	msobj.StartID = function(){msobj.Scroll()}
+	msobj.Continue = function()
+				{
+					if(msobj.MouseOver == 1)
+					{
+						setTimeout(msobj.Continue,waittime);
+					}
+					else
+					{	clearInterval(msobj.TimerID);
+						msobj.CTL = msobj.Stop = 0;
+						msobj.TimerID = setInterval(msobj.StartID,timer);
+					}
+				}
+	msobj.Pause = function()
+			{
+				msobj.Stop = 1;
+				clearInterval(msobj.TimerID);
+				setTimeout(msobj.Continue,waittime);
+			}
+	msobj.Begin = function()
+	{
+		msobj.TimerID = setInterval(msobj.StartID,timer);
+		msobj.ID.onmouseover = function()
+					{
+						msobj.MouseOver = 1;
+						clearInterval(msobj.TimerID);
+					}
+		msobj.ID.onmouseout = function()
+					{
+						msobj.MouseOver = 0;
+						if(msobj.Stop == 0)
+						{
+							clearInterval(msobj.TimerID);
+							msobj.TimerID = setInterval(msobj.StartID,timer);
+						}
+					}
+	}
+	setTimeout(msobj.Begin,stoptime);
+}
+
+Marquee.prototype.Scroll = function()
+{
+	switch(this.Direction)
+	{
+		case 0:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollTop += this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{   
+				if(this.ID.scrollTop >= this.ClientScroll)
+				{
+					this.ID.scrollTop -= this.ClientScroll;
+				}
+				this.ID.scrollTop += this.Step;
+			}
+		break;
+
+		case 1:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollTop -= this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{
+				if(this.ID.scrollTop <= 0)
+				{
+					this.ID.scrollTop += this.ClientScroll;
+				}
+				this.ID.scrollTop -= this.Step;
+			}
+		break;
+
+		case 2:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollLeft += this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{
+				if(this.ID.scrollLeft >= this.ClientScroll)
+				{
+					this.ID.scrollLeft -= this.ClientScroll;
+				}
+				this.ID.scrollLeft += this.Step;
+			}
+		break;
+
+		case 3:
+			this.CTL += this.Step;
+			if(this.CTL >= this.ScrollStep && this.WaitTime > 0)
+			{
+				this.ID.scrollLeft -= this.ScrollStep + this.Step - this.CTL;
+				this.Pause();
+				return;
+			}
+			else
+			{
+				if(this.ID.scrollLeft <= 0)
+				{
+					this.ID.scrollLeft += this.ClientScroll;
+				}
+				this.ID.scrollLeft -= this.Step;
+			}
+		break;
+	}
+}
+-->
+</SCRIPT>
+
+<DIV id=textdiv>
+<DIV id=lr>
+
+<div>
+	<DIV class="cxtj2">
+    <!--滚动开始-->
+
+         <!--{foreach from=$new_goods item=goods}-->
+    <div class="item">
+     <img style=" float:right" src="../images/item_line.gif">
+      <p class="pic"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></p>
+      <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+      <p class="price">
+        <!-- {if $goods.promote_price neq ""} -->
+        {$lang.promote_price}<span class="goodsPrice">{$goods.promote_price}</span>
+        <!-- {else}-->
+        {$lang.shop_price}<span class="goodsPrice">{$goods.shop_price}</span>
+        <!--{/if}-->
+      </p>
+
+     </div>
+    <!-- {/foreach} -->
+      	<!--滚动结束-->
+      </DIV>
+</div>
+
+
+</DIV></DIV>
+<SCRIPT defer>
+  if   (screen.width   <   1025)   
+      new Marquee("textdiv",0,4,546,189,1,3000,1)
+  else   
+      new Marquee("textdiv",0,4,766,189,1,3000,1)
+</SCRIPT>
+
+
+</DIV>
+
+
+
+  </div>
+</div>
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/recommend_best.lbi" -->
+
+<!-- {if $best_goods} -->
+<div id="globalBest" class="globalModule">
+<h3>
+<div id="recom_title_r">
+<div id="recom_title_l">
+<a style="color:#005aa0; font-weight:normal; float:right; padding-right:5px;" href="../search.php?intro=best">更多推荐>></a>	 
+</div>       
+</div>      
+</h3>
+  <div id="show_best_area" class="itemGrid">
+
+    <!-- {foreach from=$best_goods item=goods} -->
+    <div class="item">
+     <img style=" float:right" src="../images/item_line.gif">
+      <p class="pic"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></p>
+      <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+      <p class="price">
+        <!-- {if $goods.promote_price neq ""} -->
+        {$lang.promote_price}<span class="goodsPrice">{$goods.promote_price}</span>
+        <!-- {else}-->
+        {$lang.shop_price}<span class="goodsPrice">{$goods.shop_price}</span>
+        <!--{/if}-->
+      </p>
+     
+    </div>
+    <!-- {/foreach} -->
+
+  </div>
+</div>
+
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->    </div><!-- /globalMiddle -->
+    <div id="globalRight">
+      <!-- TemplateBeginEditable name="主区域右侧" -->
+<!-- #BeginLibraryItem "/library/new_articles.lbi" -->
+
+<div id="newArticle" class="globalModule">
+  <h3><div id="list_t_l"><div id="list_t_r"><b>新大众快报</b></div></div></h3>
+<div id="global_box"> 
+  <ul class="linkSkyblue">
+      <!-- {foreach name=new_articles from=$new_articles item=article} -->
+      <!-- {if $smarty.foreach.new_articles.iteration lte 6} 限制文章显示数量 -->
+      <li>· <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title|truncate:12}</a></li>
+      <!-- {/if} -->
+      <!-- {/foreach} -->
+    </ul>
+</div>  
+</div>
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/recommend_promotion.lbi" -->
+
+<!-- {if $promotion_goods} -->
+<div id="globalPromotion" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>促销商品</b></div></div></h3>
+<div id="global_box"> 
+  <div class="itemGrid">
+    <!-- {foreach from=$promotion_goods item=goods} -->
+    <div class="item">
+      <p class="pic"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></p>
+      <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+      <p class="price">
+        {$lang.promote_price}<span class="goodsPrice">{$goods.promote_price}</span>
+      </p>
+    </div>
+    <!-- {/foreach} -->
+  </div>
+   <p class="more"><a href="../search.php?intro=promotion"><img src="../images/arr_more.gif" alt="" /> 更多>></a></p>
+</div>
+</div><!-- /globalPromotion -->
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div class="ad_pic">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div class="ad_pic">{insert name='ads' id=$ads_id num=$ads_num}</div>
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/group_buy.lbi" -->
+
+<!-- {if $group_buy_goods} -->
+<div id="globalGroup" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>团购商品</b></div></div></h3>
+<div id="global_box"> 
+  <div class="itemGrid">
+    <!-- {foreach from=$group_buy_goods item=goods} -->
+    <div class="item">
+      <p class="pic"><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.goods_name|escape:html}" /></a></p>
+      <p class="name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}">{$goods.short_style_name|escape:html}</a></p>
+      <p class="price">
+        <span class="goodsPrice">{$goods.last_price}</span>
+      </p>
+    </div>
+    <!-- {/foreach} -->
+  </div>
+   <p class="more"><a href="../group_buy.php"><img src="../images/arr_more.gif" alt="" /> 更多>></a></p>
+</div>
+</div>
+<!-- {/if} -->
+
+
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/top10.lbi" -->
+
+<!-- {if $top_goods} -->
+<div id="topList" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>销售排行</b></div></div></h3>
+<div id="global_box"> 
+  <ul>
+    <!-- {foreach name=top_goods from=$top_goods item=goods}-->
+     <li style=" overflow:hidden">
+     
+    <span class="count">{$smarty.foreach.top_goods.iteration}</span>
+    <!-- {if $smarty.foreach.top_goods.iteration<2}-->
+    <div class="top_one">
+       <a style="color:#FFF" href="{$goods.url}" title="{$goods.name|escape:html}"><img style=" width:50px; height:38px;" src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="samllimg" /> </a>
+       
+       <a style="float:left" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name} <br/>
+        {$lang.shop_price}<font class="f1">{$goods.price}</font></a>
+    </div>   
+	<!-- {/if} -->	
+    
+     <!-- {if $smarty.foreach.top_goods.iteration>1}-->
+    <a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name}</a>
+    <!-- {/if} -->	
+    </li>
+    
+    
+    
+    <!--{/foreach}-->
+  </ul>
+</div>  
+</div>
+<!-- {/if} -->
+ <!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/auction.lbi" -->
+
+<!-- {if $auction_list} -->
+<div id="globalAuction" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>拍卖商品</b></div></div></h3>
+<div id="global_box"> 
+  <div class="itemGrid">
+    <!-- {foreach from=$auction_list item=auction} -->
+    <div class="item">
+      <p class="pic"><a href="{$auction.url}"><img src="{$auction.thumb}" alt="{$auction.goods_name|escape:html}" /></a></p>
+      <p class="name"><a href="{$auction.url}" title="{$auction.goods_name|escape:html}">{$auction.short_style_name|escape:html}</a></p>
+      <p class="price">
+        <span class="goodsPrice">{$auction.formated_start_price}</span>
+      </p>
+    </div>
+    <!-- {/foreach} -->
+  </div>
+      <p class="more"><a href="../auction.php"><img src="../images/arr_more.gif" alt="" /> 更多>></a></p>
+</div>
+</div>
+<!-- {/if} -->
+
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->    </div><!-- /globalRight -->
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+    <!-- {if $img_links  or $txt_links } -->
+    <div id="globalLink" class="globalModule">
+      <!-- {if $img_links} -->
+      <p>
+        <!-- 开始图片类型的友情链接{foreach from=$img_links item=link} -->
+        <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" /></a>
+        <!-- 结束图片类型的友情链接{/foreach} -->
+      </p>
+      <!-- {/if} -->
+      <!-- {if $txt_links} -->
+      <p>
+        <!-- 开始文字类型的友情链接{foreach from=$txt_links item=link} -->
+        [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]
+        <!-- 结束文字类型的友情链接{/foreach} -->
+      </p>
+      <!-- {/if} -->
+    </div><!-- /globalLink -->
+    <!-- {/if} -->
+  </div>
+<!-- /container -->
+</body>
+</html>

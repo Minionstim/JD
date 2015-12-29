@@ -1,0 +1,49 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods}-->
+
+
+
+
+<div class="globalGoodsListMenu">
+      
+
+      <span>推荐商品</span>
+      
+      
+
+    </div>
+
+
+
+
+ <div class="itemGrid" >
+    <!--{foreach from=$hot_goods item=goods}-->
+    
+         <div class="item"> 
+         <p class="pic"> <a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}"  /></a></p>
+       <p class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+         <p class="price">{$lang.exchange_integral}<font class="shop_s">{$goods.exchange_integral}</font></p>
+      </div>
+      
+  
+    <!--{/foreach}-->
+  </div>  
+<div class="blank5"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- {/if} -->

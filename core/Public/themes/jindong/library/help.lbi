@@ -1,0 +1,38 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="blank"></div>
+<!-- {if $helps} -->
+
+<div id="globalHelp" class="globalModule">
+<div class="clearfix">
+<!-- {foreach from=$helps item=help_cat name=help_list}  -->
+<dl>
+<dt>
+<img src="../images/help_{$smarty.foreach.help_list.iteration}.gif" />
+<a href='{$help_cat.cat_id}' title="{$help_cat.cat_name}">{$help_cat.cat_name}</a>
+</dt>
+<div class="blank5"></div>
+  <!-- {foreach from=$help_cat.article item=item} -->
+  <dd><a href="{$item.url}" title="{$item.title|escape:html}">{$item.short_title}</a></dd>
+  <!-- {/foreach} -->
+</dl>
+<!-- {/foreach} -->
+</div>
+<div class="blank"></div>
+<div class="blank"></div>
+
+
+<div class="serve clearfix">
+
+<ul  class="line"><img src="../images/serve_1.gif"></ul>
+<ul  class="line"><img src="../images/serve_2.gif"></ul>
+<ul  class="line"><img src="../images/serve_3.gif"></ul>
+<ul ><img src="../images/serve_4.gif"></ul>
+
+</div>
+
+
+</div>
+
+
+<div class="blank"></div>
+<!-- {/if} -->

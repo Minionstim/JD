@@ -1,0 +1,84 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $hot_goods} -->
+<div id="globalBest" class="globalModule">
+<h3>
+<div id="recom_title_r">
+<div id="recom_title_l">
+<span>热卖商品</span>
+
+
+
+<a  target="_blank" href="../search.php?intro=hot">更多热卖>></a>	 
+</div>       
+</div>      
+</h3>
+  <div id="show_hot_area" class="itemGrid">
+  
+  
+  <div class="clearfix">
+    <!-- {foreach from=$hot_goods item=goods name=hot} -->
+     <!-- {if $smarty.foreach.hot.iteration<4}-->
+ <div class="item hot_item1">
+      <p align="center" class="pic"><a target="_blank" href="{$goods.url}"><img style="width:130px; height:130px;margin:0 auto; text-align:center" src="{$goods.thumb}" alt="{$goods.name|escape:html}"/></a></p>
+      <p align="center" class="name"><a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p> 
+      
+      <p align="center" class="price">
+     
+        <!-- {if $goods.promote_price neq ""} -->
+    {$goods.promote_price}
+        <!-- {else}-->
+       {$goods.shop_price}
+        <!--{/if}-->
+      </p>
+     </div>
+    <!-- {/if} -->	
+     <!-- {/foreach} -->
+   </div>  
+     
+     
+<div class="clearfix">
+     <!-- {foreach from=$hot_goods item=goods name=hot} -->
+     <!-- {if $smarty.foreach.hot.iteration>3   &  $smarty.foreach.hot.iteration<7 }-->
+ <div class="item hot_item2">
+      <p align="center" class="pic"><a target="_blank" href="{$goods.url}"><img  src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></p>
+      <p align="center" class="name"><a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p> 
+     </div>
+    <!-- {/if} -->	
+     <!-- {/foreach} -->
+   </div>
+
+  <div class="hot_item3box clearfix">
+       <!-- {foreach from=$hot_goods item=goods name=hot} -->
+     <!-- {if $smarty.foreach.hot.iteration>6   &  $smarty.foreach.hot.iteration<13 }-->
+     <div class="item hot_item2">
+     <a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a>
+     </div>
+    <!-- {/if} -->	
+     <!-- {/foreach} -->   
+  </div>
+  
+  
+     <div class="clearfix">
+     <!-- {foreach from=$hot_goods item=goods name=hot} -->
+     <!-- {if $smarty.foreach.hot.iteration>12   &  $smarty.foreach.hot.iteration<16 }-->
+ <div class="item hot_item2">
+      <p align="center" class="pic"><a href="{$goods.url}"><img  src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></p>
+      <p align="center" class="name"><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p> 
+     </div>
+    <!-- {/if} -->	
+     <!-- {/foreach} -->
+       </div>
+      <div class="hot_item3box clearfix">
+       <!-- {foreach from=$hot_goods item=goods name=hot} -->
+     <!-- {if $smarty.foreach.hot.iteration>15   &  $smarty.foreach.hot.iteration<22 }-->
+     <div class="item hot_item2">
+     <a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a>
+     </div>
+    <!-- {/if} -->	
+     <!-- {/foreach} -->   
+  </div>
+     
+  </div>
+</div>
+<div class="blank"></div>
+<!-- {/if} -->

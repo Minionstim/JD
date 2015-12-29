@@ -1,0 +1,148 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div id="globalAuction" class="globalModule top10">
+<h3 class="h3_3"><div id="list_t_l">
+  <div id="list_t_r"><b>益智风暴畅销排行榜</b></div></div></h3>
+<div id="global_box"> 
+  <div class="itemGrid itemGrid2">
+       <div id="com1_b" class="tab_title clearfix" >
+        <h2>航模竞技</h2>
+        <h2 class="h2bg"> 机 器 人</h2>
+        <h2 class="h2bg">天文地理</h2>
+        </div>
+      <div id="com1_v"></div>
+      <div id="com1_h">
+<blockquote>
+<!-- {foreach  from=$cat_id34_best_goods item=goods  name=no}-->
+<!-- {if $smarty.foreach.no.iteration<2}-->
+<div class="line">
+<div class="item">
+<span class="no">{$smarty.foreach.no.iteration}</span>
+    <p class="pic"><a target="_blank" href="{$goods.url}"><img  src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="B_blue" /></a></p>
+    <p class="name">  <a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape}</a></p>
+    <p class="price">
+    <span class="goodsPrice"> 
+    <!-- {if $goods.promote_price neq ""} -->
+    {$goods.promote_price}
+    <!-- {else}-->
+    {$goods.shop_price}
+    <!--{/if}-->
+    </span>
+    </p>
+</div>
+</div>
+<div style="clear:both"></div>
+<!-- {else} -->	
+<div class="txt_list">
+<span class="no">{$smarty.foreach.no.iteration}</span>
+<a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape}</a>
+</div>
+<!-- {/if} -->	                 
+<!-- {/foreach} -->
+</blockquote>
+<blockquote>
+<!-- {foreach  from=$cat_id17_best_goods item=goods  name=no}-->
+<!-- {if $smarty.foreach.no.iteration<2}-->
+<div class="line">
+<div class="item">
+<span class="no">{$smarty.foreach.no.iteration}</span>
+    <p class="pic"><a target="_blank" href="{$goods.url}"><img  src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="B_blue" /></a></p>
+    <p class="name">  <a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape}</a></p>
+    <p class="price">
+    <span class="goodsPrice"> 
+    <!-- {if $goods.promote_price neq ""} -->
+    {$goods.promote_price}
+    <!-- {else}-->
+    {$goods.shop_price}
+    <!--{/if}-->
+    </span>
+    </p>
+</div>
+</div>
+<div style="clear:both"></div>
+<!-- {else} -->	
+<div class="txt_list">
+<span class="no">{$smarty.foreach.no.iteration}</span>
+<a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape}</a>
+</div>
+<!-- {/if} -->	                 
+<!-- {/foreach} -->
+</blockquote>
+<blockquote>
+<!-- {foreach  from=$cat_id34_best_goods item=goods  name=no}-->
+<!-- {if $smarty.foreach.no.iteration<2}-->
+<div class="line">
+<div class="item">
+<span class="no">{$smarty.foreach.no.iteration}</span>
+    <p class="pic"><a target="_blank" href="{$goods.url}"><a target="_blank" href="{$goods.url}"><img  src="{$goods.thumb}" alt="{$goods.name|escape:html}" class="B_blue" /></a></a></p>
+    <p class="name">  <a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape}</a></p>
+    <p class="price">
+    <span class="goodsPrice"> 
+    <!-- {if $goods.promote_price neq ""} -->
+    {$goods.promote_price}
+    <!-- {else}-->
+    {$goods.shop_price}
+    <!--{/if}-->
+    </span>
+    </p>
+</div>
+</div>
+<div style="clear:both"></div>
+<!-- {else} -->	
+<div class="txt_list">
+<span class="no">{$smarty.foreach.no.iteration}</span>
+<a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.name|escape}</a>
+</div>
+<!-- {/if} -->	                 
+<!-- {/foreach} -->
+</blockquote>
+       
+      </div>
+
+
+    <script type="text/javascript">
+    <!--
+    reg("com1");
+    //-->
+    </script>
+
+
+  </div>
+</div>
+</div>
+
+<div class="blank"></div>
+
+
+
+
+
+
+
+
+<!-- {if $promotion_goods} -->
+<div class="globalModule cuxiao">
+<h3 class="h3_3"><div id="list_t_l">
+  <div id="list_t_r"><b>益智风暴限时抢购</b></div></div></h3>
+<div id="global_box"> 
+<!--{foreach from=$promotion_goods item=goods name=no}-->
+<!-- {if $smarty.foreach.no.iteration>2  & $smarty.foreach.no.iteration<5}-->
+<div id="time{$goods.goods_id}" s="{$goods.s_time}" e="{$goods.e_time}" n="{$goods.t_now}" class="timeBox">正在载入...</div>
+<div class="goodsItem">
+		 <a target="_blank" href="{$goods.url}"><img class="goods_img"  src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a><br />
+		 <p class="name"><a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+		  <p class="price">
+          抢购价：
+          <font class="goodsPrice">
+		{$goods.promote_price}
+		 </font>
+         </p>
+         <img style="position:absolute; top:5px; right:10px;" src="../images/icon_qiang.gif">
+  </div> 
+<!-- {/if} -->   
+<!--{/foreach}-->
+</div>
+</div>
+<!-- {/if} -->
+
+<div class="blank"></div>

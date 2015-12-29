@@ -1,0 +1,181 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+</script>
+
+
+<div id="globalHeader">
+
+<ul id="top_nav_ul">
+
+
+
+			  <div id=navigation1_03 style=" float:right;">
+<DL>
+  <DT style="POSITION: relative; z-index:999999999">
+  
+  <A style="float:right; background:url(../images/biao.gif) 55px center no-repeat; padding-right:23px;display:block; line-height:29px;"  class=alk 
+  onmouseover="show_menu('float_menu2','c_fship_c')" 
+  onmouseout="hide_menu('float_menu2','c_fship_c')" 
+  href="#"  target=_self>客服中心</A><!--yyd  menu-->
+  
+  
+  
+  <DIV id=float_menu2 onMouseOver="show_menu('float_menu2','c_fship_c')" 
+  style="border: #ccc 1px solid; border-top:none;DISPLAY: none; Z-INDEX: 20; LEFT: 0px; top:0; WIDTH:70px; padding:0 0 5px 8px;POSITION: absolute;" 
+  onmouseout="hide_menu('float_menu2','c_fship_c')">
+  <UL class=cship_list>
+    <LI style="padding-bottom:7px; padding-top:5px;"><A target="_blank" href="user.php">客服中心</A> </LI>
+    <LI><A target="_blank" href="user.php">会员后台</A> </LI>
+    <LI><A target="_blank" href="user.php?act=order_list">我的订单</A> </LI>
+    <LI><A target="_blank" href="user.php?act=message_list">我的留言</A> </LI>
+   </UL></DIV><!--yyd  menu--></DT>
+  <DD>
+</DD></DL></div> 
+<div style="float:right; _padding-top:9px; background: url(../images/nav_bg2.gif) 0 top no-repeat; height:29px; padding-left:28px;">
+		<!-- {foreach name=nav_top_list from=$navigator_list.top item=nav} -->
+		<a href="{$nav.url}"  <!-- {if $nav.opennew eq 1} -->  target="_blank" <!-- {/if} -->>{$nav.name}</a> <img style="vertical-align:middle" src="../images/nav_li.gif">
+			
+			  <!-- {/foreach} -->
+			</div> 
+            
+<div  style="float:right; color:#acacac; padding-right:15px;">         
+   {insert_scripts files='transport.js,utils.js'}
+   <font id="ECS_MEMBERZONE">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'} </font> 
+</div>     
+            
+            
+              
+
+  <script type="text/javascript">
+function show_menu(obj_s,obj){
+	var  s_id = document.getElementById(obj_s);
+	var  sc_id = document.getElementById(obj);
+	     s_id.style.display = "";
+	     //sc_id.className = "ahv";
+     	}
+     	
+  function hide_menu(obj_h,obj){
+	var  h_id = document.getElementById(obj_h);
+	var  hc_id = document.getElementById(obj);
+	     h_id.style.display = "none";
+	     //hc_id.className = "alk";
+     	}
+  </script>
+	</ul>
+
+
+
+
+  <p id="logo"><img style="float:left" src="./images/logo.gif"/></a></p>
+  
+</div><!-- /globalHeader -->
+
+
+
+<div id="globalNav">
+  <ul>
+<li><a href="../index.php"{if $navigator_list.config.index eq 1} class="cur"{/if}>{$lang.home}</a></li>
+  <!-- {foreach name=nav_middle_list from=$navigator_list.middle item=nav} -->
+<li><a href="{$nav.url}" {if $nav.opennew eq 1}target="_blank" {/if} {if $nav.active eq 1} class="cur"{/if}>{$nav.name}</a></li>
+ <!-- {/foreach} -->
+  </ul>
+</div>
+
+
+<div id="globalSearch">
+<img style="position:absolute; left:0;" src="../images/search_box_l.gif">
+
+<img  style="position:absolute; right:0;" src="../images/search_box_r.gif">
+
+
+
+
+
+  <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" style="background:#99CC00; padding-left:13px;">
+
+  
+  
+<div class="search_left">  
+<input style="float:left;" name="keywords" type="text" id="keyword" value="请输入商品关键字" onclick="javascript:this.value='';this.style.color='#333333';" />
+<input type="image" src="../images/search.gif" style="float:left" />
+
+<span class="key2">
+{if $searchkeywords}
+   {$lang.hot_search} ：
+   {foreach from=$searchkeywords item=val}
+   <a target="_blank" style=" color:#ffcccc" href="search.php?keywords={$val|escape:url}">{$val}</a>
+   {/foreach}
+   {/if}
+</span>   
+</div>  
+
+
+
+
+
+
+
+
+<div class="search_right">  
+ {insert_scripts files='transport.js'}
+
+
+
+<div class="buy_car_bg clearfix" id="ECS_CARTINFO" >
+<a href="flow.php">{insert name='cart_info'}</a>
+</div> 
+	 
+
+
+
+
+
+
+
+<a href="flow.php?step=checkout"><img src="../images/qujiesuan.gif"></a>
+
+
+
+
+</div>
+
+  </form>
+
+  
+  
+  
+  
+</div>
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+{literal}
+window.onload = function()
+{
+  fixpng();
+}
+function checkSearchForm()
+{
+    if(document.getElementById('keyword').value)
+    {
+        return true;
+    }
+    else
+    {
+		   alert("{$lang.no_keywords}");
+        return false;
+    }
+}
+{/literal}
+//]]>
+</script>
+
+<div class="p_w" style="clear:both; overflow:hidden"></div>
+
+
+

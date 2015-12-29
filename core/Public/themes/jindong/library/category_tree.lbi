@@ -1,0 +1,106 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<?php
+/*
+Template Name: 比拉工作室-综合商场模板
+Template URI: http://www.belary.com/
+*/
+
+
+/**
+* 获得某个分类下的品牌列表
+*
+* @access  public
+* @param   int     $cat
+* @return  array
+*/
+function get_cat_brands($cat, $app = 'category')
+{
+    $children = ($cat > 0) ? ' AND ' . get_children($cat) : '';
+
+    $sql = "SELECT b.brand_id, b.brand_name, b.brand_logo, COUNT(g.goods_id) AS goods_num, IF(b.brand_logo > '', '1', '0') AS tag ".
+            "FROM " . $GLOBALS['ecs']->table('brand') . "AS b, ".
+                $GLOBALS['ecs']->table('goods') . " AS g ".
+            "WHERE g.brand_id = b.brand_id $children " .
+            "GROUP BY b.brand_id HAVING goods_num > 0 ORDER BY tag DESC, b.sort_order ASC";
+
+	//print_r($cat);
+
+    $row = $GLOBALS['db']->getAll($sql);
+
+    foreach ($row AS $key => $val)
+    {
+        $row[$key]['url'] = build_uri($app, array('cid' => $cat, 'bid' => $val['brand_id']), $val['brand_name']);
+    }
+
+    return $row;
+}
+
+$GLOBALS['smarty']->assign('categories1',      get_categories_tree());  
+?>
+
+<div id="o-search" style="bottom:50px;">
+<div class="allsort">
+    <div class="mt">
+        <strong>
+            <a href="catalog.php">
+                全部商品分类
+            </a>
+        </strong>
+        <div class="extra">
+            &nbsp;
+        </div>
+    </div>
+	  <div class="mc">
+	   
+			<!--{foreach from=$categories1 item=cat name=catename }-->
+			 <div class="item <!--{if $smarty.foreach.catename.first}--> fore<!-- {/if} -->" onMouseOver="this.className='item <!--{if $smarty.foreach.catename.first}--> fore<!-- {/if} -->  hover';"  onMouseOut="this.className='item <!--{if $smarty.foreach.catename.first}--> fore<!-- {/if} -->';">
+            <span>
+                <h3>
+                   <a href="{$cat.url}">{$cat.name|escape:html}</a>
+                </h3>
+                <s>
+                </s>
+            </span>
+			 <div class="i-mc">
+                <div class="subitem">
+				
+				
+				<!--{if $cat.cat_id}-->
+<!--{foreach from=$cat.cat_id item=child name=childname}-->
+<dl <!-- {if $smarty.foreach.childname.first} --> class="fore" <!-- {/if} -->>
+<dt><a href="{$child.url}">{$child.name|escape:html}</a></dt>
+<!--{if $child.cat_id}-->
+<dd>
+<!--{foreach from=$child.cat_id item=childer}-->
+    <em><a href="{$childer.url}">{$childer.name|escape:html}</a></em>
+       <!--{/foreach}-->
+	    <em>
+                                <a href="{$child.url}">
+                                    更多&gt;&gt;
+                                </a>
+                            </em>
+</dd>
+<!--{/if}-->
+ </dl>
+  <!--{/foreach}-->
+<!--{/if}-->
+				
+				
+				
+				</div>
+				<div class="fr"><dl class="brands"><dt>推荐品牌</dt><dd> <!--{foreach from=get_cat_brands($this->_var['cat']['id']) item=brandCat}-->
+<a href="{$brandCat.url}" style="margin-right:3px;
+width:70px;display:block; float:left; height:18px; line-height:18px; margin:0 0 3px; overflow:hidden;">{$brandCat.brand_name}</a>
+<!--{/foreach}--></dd></dl></div>
+				</div>
+			</div>
+			<!--{/foreach}-->
+			 <div class="extra">
+            <a href="catalog.php">
+                全部商品分类
+            </a>
+        </div>
+	  </div>
+	 </div>
+    </div>	
+<div class="blank"></div>

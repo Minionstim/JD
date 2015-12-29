@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<meta name="Description" content="{$description}" />
+{if $auto_redirect}
+<meta http-equiv="refresh" content="3;URL={$message.href}" />
+{/if}
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link href="" rel="stylesheet" type="text/css" /> 
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+</head>
+<body>
+  <div id="container">
+    <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+    <div id="globalLeft">
+      <!-- TemplateBeginEditable name="主区域左侧" -->
+      <!-- #BeginLibraryItem "/library/category_tree-beifen.lbi" --><!-- #EndLibraryItem -->
+      <!-- #BeginLibraryItem "/library/history.lbi" --><!-- #EndLibraryItem -->
+      <!-- TemplateEndEditable -->
+    </div><!-- /globalLeft -->
+    <div id="globalBigRight">
+ 
+     <!-- #BeginLibraryItem "/library/message_list.lbi" --><!-- #EndLibraryItem -->
+     <!-- #BeginLibraryItem "/library/pages.lbi" --><!-- #EndLibraryItem -->
+      <div id="globalGroupList" class="globalModule">
+      
+    <div class="tab_box">
+    <div class="tab_title"><h3>{$lang.post_message}</h3></div>
+    </div>
+        <div class="v_m">
+         <form action="message.php" method="post" name="formMsg" onSubmit="return submitMsgBoard()">
+            <table width="100%" border="0" cellpadding="3"  class="tableList ">
+              <tr>
+                <td align="right">{$lang.username}</td>
+                <td>
+                <!--{if $smarty.session.user_name}-->
+                <font class="f4_b">{$username}</font><label for="anonymous" style="margin-left:8px;"> <input type="checkbox" name="anonymous" value="1" id="anonymous" /> {$lang.message_anonymous}</label>
+                <!--{else}-->
+                <input name="user_name"  class="textInput" type="text" size="15" value="{$lang.anonymous}" />
+                <!--{/if}-->
+                </td>
+              </tr>
+              <tr>
+                <td align="right">{$lang.email}</td>
+                <td><input name="user_email" type="text"  class="textInput" size="20" value="{$smarty.session.email|escape}" /></td>
+              </tr>
+              <tr>
+                <td align="right">{$lang.message_board_type}</td>
+                <td><input name="msg_type" type="radio" value="0" checked="checked" />
+                  {$lang.message_type[0]}
+                  <input type="radio" name="msg_type" value="1" />
+                  {$lang.message_type[1]}
+                  <input type="radio" name="msg_type" value="2" />
+                  {$lang.message_type[2]}
+                  <input type="radio" name="msg_type" value="3" />
+                  {$lang.message_type[3]}
+                  <input type="radio" name="msg_type" value="4" />
+                  {$lang.message_type[4]} </td>
+              </tr>
+              <tr>
+                <td align="right">{$lang.message_title}</td>
+                <td><input name="msg_title" type="text"  class="textInput" size="30" /></td>
+              </tr>
+            <!-- 判断是否启用验证码{if $enabled_mes_captcha} -->
+
+              <tr>
+                <td align="right">{$lang.comment_captcha}</td>
+                <td><input type="text" size="8" name="captcha" class="textInput" />
+                <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> </td>
+              </tr>
+            <!--{/if}-->
+              <tr>
+                <td align="right" valign="top">{$lang.message_content}</td>
+                <td><textarea name="msg_content" cols="50" rows="4" wrap="virtual" style="border:1px solid #ccc;"></textarea></td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td><input type="hidden" name="act" value="act_add_message" />
+                  <input type="submit" value="" class="bnt_blue_1" />
+                </td>
+              </tr>
+            </table>
+          </form>
+        <script type="text/javascript">
+        {foreach from=$lang.message_board_js item=item key=key}
+        var {$key} = "{$item}";
+        {/foreach}
+        {literal}
+        /**
+         * 提交评论信息
+        */
+        function submitMsgBoard(frm)
+        {
+            var frm         = document.forms['formMsg'];
+            var msg_title   = frm.elements['msg_title'].value;
+            var msg_content = frm.elements['msg_content'].value;
+            var msg = '';
+
+            if (msg_title.length == 0)
+            {
+                msg += msg_title_empty + '\n';
+            }
+            if (frm.elements['captcha'] && frm.elements['captcha'].value.length==0)
+            {
+                msg += msg_captcha_empty + '\n'
+            }
+            if (msg_content.length == 0)
+            {
+                msg += msg_content_empty + '\n'
+            }
+            if (msg_title.length > 200)
+            {
+                msg += msg_title_limit + '\n';
+            }
+
+            if (msg.length > 0)
+            {
+                alert(msg);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        {/literal}
+        </script> 
+        </div>
+      </div><!-- /globalAuctionList -->
+     
+    </div><!-- /globalBigRight -->
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+    <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+  </div><!-- /container -->
+</body>
+</html>

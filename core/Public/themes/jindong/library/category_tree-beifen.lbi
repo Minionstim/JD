@@ -1,0 +1,59 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+
+
+
+ <div class="globalModule1">
+<h3 class="h32"><b>商品分类</b> <a target="_blank" href="search.php">全部分类>></a></h3>
+<div class="my_left_category">
+<div class="blank" style="height:0; _display:none"></div>
+{assign var="pre_item_level" value=-1}
+<!--{foreach from=cat_list(0,0,false,3,false) item=cat name=no}-->
+{if $cat.level lt 2 && $pre_item_level gt 0}
+</ul></div></div></div></div>
+{/if}
+{if $cat.level eq 0}
+
+
+<h2> <a target="_blank" href="{$cat.url}"> {$cat.name|escape:html}</a></h2>
+{elseif $cat.level eq 1}
+<div class="h2_cat" onmouseover="this.className='h2_cat active_cat'" onmouseout="this.className='h2_cat'">
+<h3>
+<div class="xianzhi">
+<a target="_blank" href="{$cat.url}">{$cat.name|escape:html}</a> <span class="des">- {$cat.cat_desc|escape:html}</span>
+</div>
+</h3>
+<div class="h3_cat">
+<div class="shadow">
+<div class="shadow_border">
+<ul> 
+{elseif $cat.level eq 2}
+<li><a target="_blank" href="{$cat.url}">{$cat.name|escape:html}</a></li>
+
+{/if}
+
+{assign var="pre_item_level" value=$cat.level}
+<!--{/foreach}-->
+{if $pre_item_level gt 0}
+</ul></div></div></div></div>
+{/if}
+
+<div class="blank"></div>
+
+
+</div>
+
+</div>
+
+<div class="blank"></div>
+
+
+<style type="text/css">
+<!--
+.age_box a{ float: left; height:22px; line-height:22px; width:92px; background:url(../images/biao6.gif) 0 center no-repeat; padding-left:10px;font-family:Arial, Helvetica, sans-serif;color:#333333}
+-->
+</style>
+
+
+<div class="blank"></div>

@@ -1,0 +1,27 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+<!--
+.age_box a{ float: left; height:22px; line-height:22px; width:70px; background:url(../images/biao6.gif) 0 center no-repeat; padding-left:10px;font-family:Arial, Helvetica, sans-serif;color:#333333}
+-->
+</style>
+<div id="brandList" class="globalModule" style="margin-top:355px;">
+<h3><div id="list_t_l"><div id="list_t_r"><b>按年龄查询</b></div></div></h3>
+<div id="global_box"> 
+<div style="clear:both"></div>
+   <div class="age_box">
+   <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjE1OiLlh7rnlJ8tMTLkuKrmnIgiO3M6MToieCI7czoyOiI0MCI7czoxOiJ5IjtzOjI6IjEzIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTI2Mjg2OTcwMzt9">
+    出生-12个月
+    </a>
+    <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjExOiIxMi0yNOS4quaciCI7czoxOiJ4IjtzOjI6IjI0IjtzOjE6InkiO3M6MToiOSI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjEyNjI4Njk3NDU7fQ==">
+    12-24个月</a>
+    <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjQ6IjLlsoEiO3M6MToieCI7czoxOiIwIjtzOjE6InkiO3M6MToiNCI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjEyNjI4Njk3Nzk7fQ==">2岁</a>
+    <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjY6IjMtNOWygSI7czoxOiJ4IjtzOjI6IjEzIjtzOjE6InkiO3M6MjoiMTYiO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxMjYyODY5ODA1O30=">3-4岁</a>
+    <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjY6IjUtN%2bWygSI7czoxOiJ4IjtzOjI6IjE1IjtzOjE6InkiO3M6MToiOSI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjEyNjI4Njk4Mjk7fQ==">5-7岁</a>
+    <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjc6IjgtMTHlsoEiO3M6MToieCI7czoyOiIxMSI7czoxOiJ5IjtzOjI6IjExIjtzOjE4OiJzZWFyY2hfZW5jb2RlX3RpbWUiO2k6MTI2Mjg2OTg1Njt9">8-11岁</a>
+    <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjg6IjEyLTE05bKBIjtzOjE6IngiO3M6MjoiMjUiO3M6MToieSI7czoyOiIxNSI7czoxODoic2VhcmNoX2VuY29kZV90aW1lIjtpOjEyNjI4Njk4ODQ7fQ==">12-14岁</a>
+    <a target="_blank" href="search.php?encode=YTo0OntzOjg6ImtleXdvcmRzIjtzOjExOiIxNeWygeS7peS4iiI7czoxOiJ4IjtzOjI6IjEwIjtzOjE6InkiO3M6MjoiMTciO3M6MTg6InNlYXJjaF9lbmNvZGVfdGltZSI7aToxMjYyODY5OTIxO30=">15岁以上</a>
+   
+    </div>
+</div>
+</div>
+<div class="blank"></div>

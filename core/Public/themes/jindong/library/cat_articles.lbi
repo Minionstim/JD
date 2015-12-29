@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $articles} -->
+<div class="globalModule">
+ <h3><div id="list_t_l"><div id="list_t_r"><b>{$articles_cat.name|escape:html}</b></div></div></h3>
+ <div id="global_box"> 
+  <ul class="listStyle">
+    <!-- {foreach from=$articles item=article} -->
+    <li><a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title}</a></li>
+    <!-- {/foreach} -->
+  </ul>
+<p class="more"><a href="{$articles_cat.url}"><img src="../images/arr_more.gif" alt="" /> 更多>></a></p>
+</div>
+
+ 
+
+</div>
+<!-- {/if} -->

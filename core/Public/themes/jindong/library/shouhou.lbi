@@ -1,0 +1,8 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="tab_box" style="padding-top:10px;">
+        <div class="tab_title"><h3>售后服务</h3></div>
+        <div class="com_v">
+        <p>本产品全国联保，享受三包服务，质保期为：整机，主要零部件三年</p>
+    <p>本产品全国免运费，全国免费送货上门、免费上门安装调试、免费上门检测和维修等售后服务，凭厂商提供的故障检测报告，享受7日内退货，15日内换货，15日以上在质保期内享受免费保修等三包服务！</p>
+    {$goods.goods_brief}        </div>
+    </div>

@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $best_goods} -->
+<div id="globalBest" class="globalModule">
+<h3>
+
+
+<div id="recom_title_r">
+<div id="recom_title_l">
+<span>推荐商品</span>
+
+
+
+<a  target="_blank" href="../search.php?intro=best">更多推荐>></a>	 
+</div>       
+</div>       
+
+
+
+</h3>
+  <div id="show_best_area" class="itemGrid">
+
+    <!-- {foreach from=$best_goods item=goods} -->
+    <div class="item">
+
+      <p class="pic"><a target="_blank" href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></p>
+      <p class="name"><a target="_blank" href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name} <span>{$goods.brief}</span></a></p>
+     
+      <p class="price">
+        <!-- {if $goods.promote_price neq ""} -->
+        {$lang.promote_price}<span class="goodsPrice">{$goods.promote_price}</span>
+        <!-- {else}-->
+        {$lang.shop_price}<span class="goodsPrice">{$goods.shop_price}</span>
+        <!--{/if}-->
+      </p>
+     
+    </div>
+    <!-- {/foreach} -->
+
+  </div>
+</div>
+<div class="blank"></div>
+<!-- {/if} -->

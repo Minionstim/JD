@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+<div><h1>当前操作：添加产品</h1></div>
+<hr/>
+<div>
+<a href="__APP__/Product/add">添加产品</a>&nbsp;|&nbsp;
+<a href="__APP__/Product/oper">管理产品</a>&nbsp;|&nbsp;
+<a href="__APP__/BackG/index">管理中心
+</a></div>
+<hr/>
+<div>当前操作：添加产品</div>
+<form enctype="multipart/form-data" action="__APP__/Product/psave" method="post">
+<table>
+	<tr>
+		<td>产品名称：</td>
+		<td><input type="text" name="pname"/></td>
+	</tr>
+	<tr>
+		<td>产品分类：</td>
+		<td>
+		<select name="typeid">
+			{$str}
+		</select>
+		</td>
+	</tr>
+	<tr>
+		<td>图片：</td>
+		<td><input type="file" multiple="multiple" name="upload[]"/></td>
+	</tr>
+	<tr>
+		<td>价格：</td>
+		<td><input type="text" value="" name="price"/></td>
+	</tr>
+	<tr>
+		<td>会员价格：</td>
+		<td><input type="text" value="" name="userprice"/></td>
+	</tr>
+	<tr>
+		<td>优惠价格：</td>
+		<td><input type="text" value="" name="buyprice"/></td>
+	</tr>
+	<tr>
+		<td>优惠数量：</td>
+		<td><input type="text" value="" name="buynum"/></td>
+	</tr>
+	<tr>
+		<td>品牌：</td>
+		<td><input type="text" value="" name="brand"/></td>
+	</tr>
+	<tr>
+		<td>库存量：</td>
+		<td><input type="text" value="" name="num"/></td>
+	</tr>
+	<tr>
+		<td>规格参数：</td>
+		<td><textarea name="format" rows="6" cols="50"></textarea></td>
+	</tr>
+	<tr>
+		<td>产品介绍：</td>
+		<td><textarea name="intro" rows="6" cols="50"></textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="添加"/></td>
+	</tr>
+</table>
+</form>
+</body>
+</html>

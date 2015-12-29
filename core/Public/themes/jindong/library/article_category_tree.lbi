@@ -1,0 +1,18 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $article_categories} -->
+<div id="globalAttrlinked" class="globalModule">
+<h3><div id="list_t_l"><div id="list_t_r"><b>文章分类</b></div></div></h3>
+<div id="global_box"> 
+  <ul class="listStyle">
+    <!-- {foreach from=$article_categories item=cat} -->
+    <li>
+      <a href="{$cat.url}">{$cat.name|escape:html} &gt;&gt;</a></li>
+      <!-- {foreach from=$cat.children item=child} -->
+      <li style=" background:none"><a style="color:#999" href="{$child.url}">{$child.name|escape:html}</a></li>
+      <!-- {/foreach} -->
+    
+    <!-- {/foreach} -->
+  </ul>
+</div>
+</div>
+<!-- {/if} -->

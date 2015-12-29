@@ -1,0 +1,36 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!-- {if $promotion_goods} -->
+<style type="text/css">
+<!--
+.cuxiao  #list_t_r{ background: url(../images/cuxiao_bg.gif) no-repeat 8px 5px; padding-left:30px; padding-top:3px;}
+.cuxiao  #global_box{ text-align:center}
+.cuxiao  #global_box .goodsItem{ padding:13px 0; position:relative }
+.timeBox{ font-size:12px; color:#222;background:url(../images/cuxiao_line.gif) center 0 no-repeat; padding-top:4px;}
+.timeBox strong{ font-size:20px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#e61400}
+-->
+</style>
+<div class="globalModule cuxiao" style="overflow: hidden; width:211px;">
+  <h3><div id="list_t_l"><div id="list_t_r"><b>本周限时抢购</b></div>
+  </div></h3>
+<div id="global_box"> 
+   
+  <!--{foreach from=$promotion_goods item=goods}-->
+	 <div id="time{$goods.goods_id}" s="{$goods.s_time}" e="{$goods.e_time}" n="{$goods.t_now}" class="timeBox">正在载入...</div>
+  <div class="goodsItem">
+		 <a href="{$goods.url}"><img style="margin-bottom:6px;" src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a><br />
+		 <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_style_name}</a></p>
+		  <p class="price">
+          <font class="goodsPrice">
+		抢购价：{$goods.promote_price}
+		 </font>
+         </p>
+         
+         <img style="position:absolute; top:50px; right:30px;" src="../images/icon_qiang.gif">
+  </div>
+ 
+  <!--{/foreach}-->
+
+  </div> 
+</div>
+<div class="blank"></div>
+<!-- {/if} -->
